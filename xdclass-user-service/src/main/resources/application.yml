@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: xdclass-user-service
+  redis:
+    host: 192.1.1.101
+    password: 123456
+    port: 8000
 
   #数据库配置
   datasource:
