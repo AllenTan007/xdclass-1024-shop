@@ -1,18 +1,16 @@
-package net.config;
+package net.xdclass.config;
 
 
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import lombok.extern.slf4j.Slf4j;
-import net.xdclass.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Properties;
 
 /**

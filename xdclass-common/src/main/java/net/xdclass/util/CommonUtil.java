@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * 小滴课堂,愿景：让技术不再难学
@@ -81,15 +82,54 @@ public class CommonUtil {
 
     }
 
-    public static  String getRandomCode(int length){
-        String a = "0123456789";
-        StringBuffer sb = new StringBuffer();
 
-        for (int i = 0; i < length; i++) {
-            Random random = new Random();
-            int j = random.nextInt(9);
-            sb.append(a.charAt(j));
+    /**
+     * 获取验证码随机数
+     * @param length
+     * @return
+     */
+    public static String getRandomCode(int length){
+
+        String sources = "0123456789";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+        for(int j=0; j<length; j++){
+            sb.append(sources.charAt(random.nextInt(9)));
         }
         return sb.toString();
+    }
+
+
+    /**
+     * 获取当前时间戳
+     * @return
+     */
+    public static long getCurrentTimestamp(){
+        return System.currentTimeMillis();
+    }
+
+
+    /**
+     * 生成uuid
+     * @return
+     */
+    public static String generateUUID() {
+        return UUID.randomUUID().toString().replaceAll("-","").substring(0,32);
+    }
+
+    /**
+     * 获取随机长度的串
+     * @param length
+     * @return
+     */
+    private static final String ALL_CHAR_NUM = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    public static String getStringNumRandom(int length) {
+        //生成随机数字和字母,
+        Random random = new Random();
+        StringBuilder saltString = new StringBuilder(length);
+        for (int i = 1; i <= length; ++i) {
+            saltString.append(ALL_CHAR_NUM.charAt(random.nextInt(ALL_CHAR_NUM.length())));
+        }
+        return saltString.toString();
     }
 }

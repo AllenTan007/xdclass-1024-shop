@@ -6,4 +6,6 @@ import net.xdclass.util.JsonData;
 public interface NotifyService {
 
     JsonData sendCode(SendCodeEnum sendCodeType, String to);
+
+    boolean checkCode(SendCodeEnum userRegister, String mail, String code);
 }

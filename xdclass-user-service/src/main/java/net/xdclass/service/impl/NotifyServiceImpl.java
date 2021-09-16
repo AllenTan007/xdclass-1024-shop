@@ -49,17 +49,30 @@ public class NotifyServiceImpl implements NotifyService {
                 return JsonData.buildResult(BizCodeEnum.CODE_LIMITED);
             }
         }
-
+        String code = CommonUtil.getRandomCode(6);
+        String value = code+"_"+System.currentTimeMillis();
+        redisTemplate.opsForValue().set(cacheKey,value,1000*60, TimeUnit.MILLISECONDS);
         if (CheckUtil.isEmail(to)) {
             //邮箱验证码
-            String code = String.format(CONTENT, CommonUtil.getRandomCode(6));
-            String cacheValue = code+"_"+System.currentTimeMillis();
-            redisTemplate.opsForValue().set(cacheKey,cacheValue,1000*60, TimeUnit.MILLISECONDS);
             messageService.sendMessage(to, SUBJECT, code);
             return JsonData.buildSuccess();
         } else if (CheckUtil.isPhone(to)) {
             //短信验证码
         }
         return JsonData.buildResult(BizCodeEnum.CODE_TO_ERROR);
+    }
+
+    @Override
+    public boolean checkCode(SendCodeEnum userRegister, String mail, String code) {
+        String cacheKey = String.format(CacheKey.CHECK_CODE_KEY,userRegister.name(),mail);
+        String cacheCode = redisTemplate.opsForValue().get(cacheKey);
+        if (StringUtils.isNotBlank(cacheCode)){
+            String cacheValue = cacheCode.split("_")[0];
+            if (cacheValue.equals(code)){
+                redisTemplate.delete(cacheKey);
+                return true;
+            }
+        }
+        return false;
     }
 }
