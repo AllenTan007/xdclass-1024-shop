@@ -6,6 +6,7 @@ import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.enums.SendCodeEnum;
 import net.xdclass.mapper.UserMapper;
 import net.xdclass.model.UserDO;
+import net.xdclass.request.UserLoginRequest;
 import net.xdclass.request.UserRegisterRequest;
 import net.xdclass.service.NotifyService;
 import net.xdclass.service.UserService;
@@ -67,6 +68,23 @@ public class UserServiceImpl implements UserService {
             return JsonData.buildSuccess();
         }else {
             return JsonData.buildResult(BizCodeEnum.ACCOUNT_REPEAT);
+        }
+    }
+
+    @Override
+    public JsonData login(UserLoginRequest loginRequest) {
+
+        List<UserDO> mailList = userMapper.selectList(new QueryWrapper<UserDO>().eq("mail", loginRequest.getMail()));
+        if (mailList!=null && mailList.size()==1){
+            UserDO userDO = mailList.get(0);
+            String pwd = Md5Crypt.md5Crypt(loginRequest.getPwd().getBytes(), userDO.getSecret());
+            if (pwd.equals(userDO.getPwd())){
+                return null;
+            }else {
+                return JsonData.buildResult(BizCodeEnum.ACCOUNT_PWD_ERROR);
+            }
+        }else {
+            return JsonData.buildResult(BizCodeEnum.ACCOUNT_UNREGISTER);
         }
     }
 
