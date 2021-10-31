@@ -1,6 +1,12 @@
 package net.xdclass.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
@@ -15,7 +21,7 @@ import java.util.UUID;
  * @Remark 有问题直接联系我，源码-笔记-技术交流群
  * @Version 1.0
  **/
-
+@Slf4j
 public class CommonUtil {
 
     /**
@@ -55,7 +61,7 @@ public class CommonUtil {
                 }
             }
         } catch (Exception e) {
-            ipAddress="";
+            ipAddress = "";
         }
         return ipAddress;
     }
@@ -63,10 +69,11 @@ public class CommonUtil {
 
     /**
      * MD5加密
+     *
      * @param data
      * @return
      */
-    public static String MD5(String data)  {
+    public static String MD5(String data) {
         try {
             java.security.MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] array = md.digest(data.getBytes("UTF-8"));
@@ -85,15 +92,16 @@ public class CommonUtil {
 
     /**
      * 获取验证码随机数
+     *
      * @param length
      * @return
      */
-    public static String getRandomCode(int length){
+    public static String getRandomCode(int length) {
 
         String sources = "0123456789";
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
-        for(int j=0; j<length; j++){
+        for (int j = 0; j < length; j++) {
             sb.append(sources.charAt(random.nextInt(9)));
         }
         return sb.toString();
@@ -102,27 +110,31 @@ public class CommonUtil {
 
     /**
      * 获取当前时间戳
+     *
      * @return
      */
-    public static long getCurrentTimestamp(){
+    public static long getCurrentTimestamp() {
         return System.currentTimeMillis();
     }
 
 
     /**
      * 生成uuid
+     *
      * @return
      */
     public static String generateUUID() {
-        return UUID.randomUUID().toString().replaceAll("-","").substring(0,32);
+        return UUID.randomUUID().toString().replaceAll("-", "").substring(0, 32);
     }
 
     /**
      * 获取随机长度的串
+     *
      * @param length
      * @return
      */
     private static final String ALL_CHAR_NUM = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
     public static String getStringNumRandom(int length) {
         //生成随机数字和字母,
         Random random = new Random();
@@ -132,4 +144,22 @@ public class CommonUtil {
         }
         return saltString.toString();
     }
+
+    /**
+     * 响应json数据给前端
+     *
+     * @param response
+     * @param obj
+     */
+    public static void sendJsonMessage(HttpServletResponse response, Object obj) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        response.setContentType("application/json; charset=utf-8");
+        try (PrintWriter writer = response.getWriter()) {
+            writer.print(objectMapper.writeValueAsString(obj));
+        } catch (IOException e) {
+            log.warn("响应json数据给前端异常:{}",e);
+        }
+    }
+
 }
