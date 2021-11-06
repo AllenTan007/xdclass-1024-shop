@@ -1,9 +1,11 @@
 package net.xdclass.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.enums.SendCodeEnum;
+import net.xdclass.interceptor.LoginInterceptor;
 import net.xdclass.mapper.UserMapper;
 import net.xdclass.model.LoginUser;
 import net.xdclass.model.UserDO;
@@ -14,6 +16,7 @@ import net.xdclass.service.UserService;
 import net.xdclass.util.CommonUtil;
 import net.xdclass.util.JWTUtil;
 import net.xdclass.util.JsonData;
+import net.xdclass.vo.UserVO;
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -92,6 +95,15 @@ public class UserServiceImpl implements UserService {
         }else {
             return JsonData.buildResult(BizCodeEnum.ACCOUNT_UNREGISTER);
         }
+    }
+
+    @Override
+    public UserVO findUserDetail() {
+        LoginUser loginUser = LoginInterceptor.threadLocal.get();
+        UserDO userDO = userMapper.selectOne(new QueryWrapper<UserDO>().eq("id", loginUser.getId()));
+        UserVO userVO = new UserVO();
+        BeanUtils.copyProperties(userDO,userVO);
+        return userVO;
     }
 
     private void userRegisterInitTask(UserDO userDO) {
