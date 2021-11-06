@@ -4,10 +4,11 @@ package net.xdclass.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import net.xdclass.model.AddressDO;
+import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.request.AddressAddReqeust;
 import net.xdclass.service.AddressService;
 import net.xdclass.util.JsonData;
+import net.xdclass.vo.AddressVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,21 +30,28 @@ public class AddressController {
 
     @GetMapping("find/{address_id}")
     @ApiOperation("根据id查询地址详情")
-    public Object detail(
-            @ApiParam(value = "地址id",required = true)
-            @PathVariable("address_id") long id){
-        AddressDO addressDO = addressService.detail(id);
-        return JsonData.buildSuccess(addressDO);
+    public JsonData detail(
+            @ApiParam(value = "地址id", required = true)
+            @PathVariable("address_id") long addressId) {
+        AddressVO addressVO = addressService.detail(addressId);
+        return addressVO != null ? JsonData.buildSuccess(addressVO) : JsonData.buildResult(BizCodeEnum.ADDRESS_NO_EXITS);
+    }
+
+    @ApiOperation("删除地址详情")
+    @GetMapping("delete/{addressId}")
+    public JsonData deteleDetail(@ApiParam("地址id")
+                                 @PathVariable("addressId") long addressId) {
+        int rows = addressService.del(addressId);
+        return rows == 1 ? JsonData.buildSuccess() : JsonData.buildResult(BizCodeEnum.ADDRESS_DEL_FAIL);
     }
 
     @ApiOperation("新增地址详情")
     @PostMapping("add")
     public JsonData addDetail(@ApiParam("地址对象")
-            @RequestBody AddressAddReqeust addressAddReqeust){
+                              @RequestBody AddressAddReqeust addressAddReqeust) {
         addressService.addDetail(addressAddReqeust);
         return JsonData.buildSuccess();
     }
-
 
 }
 

@@ -8,6 +8,7 @@ import net.xdclass.model.AddressDO;
 import net.xdclass.model.LoginUser;
 import net.xdclass.request.AddressAddReqeust;
 import net.xdclass.service.AddressService;
+import net.xdclass.vo.AddressVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,9 +24,21 @@ public class AddressServiceImpl implements AddressService {
 
 
     @Override
-    public AddressDO detail(long id) {
-        return addressMapper.selectOne(new QueryWrapper<AddressDO>().eq("id", id));
+    public AddressVO detail(long addressId) {
+        LoginUser loginUser = LoginInterceptor.threadLocal.get();
+
+        AddressDO addressDO = addressMapper.selectOne(new QueryWrapper<AddressDO>().eq("id", addressId).eq("user_id", loginUser.getId()));
+
+        if(addressDO == null){
+            return null;
+        }
+        AddressVO addressVO = new AddressVO();
+        BeanUtils.copyProperties(addressDO,addressVO);
+        return addressVO;
     }
+
+
+
 
     @Override
     public void addDetail(AddressAddReqeust addressAddReqeust) {
@@ -45,5 +58,11 @@ public class AddressServiceImpl implements AddressService {
         int rows = addressMapper.insert(addressDO);
         log.info("新增收货地址:rows={},data={}",rows,addressDO);
 
+    }
+
+    @Override
+    public int del(long addressId) {
+        LoginUser loginUser = LoginInterceptor.threadLocal.get();
+        return addressMapper.delete(new QueryWrapper<AddressDO>().eq("user_id",loginUser.getId()).eq("id",addressId));
     }
 }

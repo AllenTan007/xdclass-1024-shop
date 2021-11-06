@@ -4,6 +4,7 @@ package net.xdclass.biz;
 import net.xdclass.UserApplication;
 import net.xdclass.model.AddressDO;
 import net.xdclass.service.AddressService;
+import net.xdclass.vo.AddressVO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ public class AddressTest {
     @Test
     public void testAddress(){
 
-        AddressDO detail = addressService.detail(1);
+        AddressVO detail = addressService.detail(1);
 
         Assert.assertNotNull(detail);
     }
