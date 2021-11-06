@@ -45,9 +45,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 
             //通过threadLocal传递用户登录信息
             threadLocal.set(loginUser);
+
+            return true;
         }
 
-
+        CommonUtil.sendJsonMessage(response,JsonData.buildResult(BizCodeEnum.ACCOUNT_UNLOGIN));
         return false;
     }
 
