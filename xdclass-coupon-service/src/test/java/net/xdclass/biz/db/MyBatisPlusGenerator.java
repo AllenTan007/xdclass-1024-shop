@@ -1,4 +1,4 @@
-package net.xdclass.db;
+package net.xdclass.biz.db;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,7 +26,7 @@ public class MyBatisPlusGenerator {
         // 是否支持AR模式
         config.setActiveRecord(true)
                 // 作者
-                .setAuthor("二当家小D")
+                .setAuthor("谭世伟")
                 // 生成路径，最好使用绝对路径，window路径是不一样的
                 //TODO  TODO  TODO  TODO
                 .setOutputDir("E:\\model")
@@ -57,7 +57,7 @@ public class MyBatisPlusGenerator {
         dsConfig.setDbType(DbType.MYSQL)
                 .setDriverName("com.mysql.cj.jdbc.Driver")
                 //TODO  TODO  TODO  TODO
-                .setUrl("jdbc:mysql://127.0.0.1:3306/xdclass_user?useSSL=false")
+                .setUrl("jdbc:mysql://127.0.0.1:3306/xdclass_coupon?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai")
                 .setUsername("root")
                 .setPassword("123123");
 
@@ -77,7 +77,7 @@ public class MyBatisPlusGenerator {
 
                 // 生成的表, 支持多表一起生成，以数组形式填写
                 //TODO  TODO  TODO  TODO
-                .setInclude("user","address");
+                .setInclude("coupon","coupon_record");
 
         //4. 包名策略配置
         PackageConfig pkConfig = new PackageConfig();

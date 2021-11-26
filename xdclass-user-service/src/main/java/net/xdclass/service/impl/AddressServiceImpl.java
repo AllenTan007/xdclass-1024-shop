@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -64,5 +66,16 @@ public class AddressServiceImpl implements AddressService {
     public int del(long addressId) {
         LoginUser loginUser = LoginInterceptor.threadLocal.get();
         return addressMapper.delete(new QueryWrapper<AddressDO>().eq("user_id",loginUser.getId()).eq("id",addressId));
+    }
+
+    @Override
+    public List<AddressVO> listUserAllAddress() {
+        LoginUser loginUser = LoginInterceptor.threadLocal.get();
+        List<AddressDO> addressDOList = addressMapper.selectList(new QueryWrapper<AddressDO>().eq("user_id", loginUser.getId()));
+        return addressDOList.stream().map(s -> {
+            AddressVO addressVO = new AddressVO();
+            BeanUtils.copyProperties(s, addressVO);
+            return addressVO;
+        }).collect(Collectors.toList());
     }
 }

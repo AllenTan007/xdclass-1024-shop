@@ -12,6 +12,8 @@ import net.xdclass.vo.AddressVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  * 电商-公司收发货地址表 前端控制器
@@ -51,6 +53,19 @@ public class AddressController {
                               @RequestBody AddressAddReqeust addressAddReqeust) {
         addressService.addDetail(addressAddReqeust);
         return JsonData.buildSuccess();
+    }
+
+    /**
+     * 查询用户的全部收费地址
+     * @return
+     */
+    @ApiOperation("查询用户的全部收费地址")
+    @GetMapping("/list")
+    public JsonData findUserAllAddress(){
+
+        List<AddressVO> list = addressService.listUserAllAddress();
+        return JsonData.buildSuccess(list);
+
     }
 
 }
