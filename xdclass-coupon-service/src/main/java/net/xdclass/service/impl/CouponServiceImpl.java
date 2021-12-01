@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.enums.CouponCategoryEnum;
 import net.xdclass.enums.CouponPublishEnum;
+import net.xdclass.enums.CouponStateEnum;
 import net.xdclass.exception.BizException;
 import net.xdclass.interceptor.LoginInterceptor;
 import net.xdclass.mapper.CouponMapper;
@@ -22,6 +24,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,6 +38,7 @@ import java.util.stream.Collectors;
  * @since 2021-11-27
  */
 @Service
+@Slf4j
 public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> implements CouponService {
 
     @Autowired
@@ -75,6 +79,25 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
         // 检查优惠券是否领取
         this.checkCoupon(couponDO, loginUser.getId());
 
+        CouponRecordDO couponRecordDO = new CouponRecordDO();
+        BeanUtils.copyProperties(couponDO, couponRecordDO);
+        couponRecordDO.setCreateTime(new Date());
+        couponRecordDO.setUseState(CouponStateEnum.NEW.name());
+        couponRecordDO.setUserId(loginUser.getId());
+        couponRecordDO.setUserName(loginUser.getName());
+        couponRecordDO.setCouponId(couponId);
+        couponRecordDO.setId(null);
+
+        //扣减库存  TODO
+        int rows = 1; //couponMapper.reduceStock(couponId);
+
+        if (rows == 1) {
+            //库存扣减成功才保存记录
+            couponRecordMapper.insert(couponRecordDO);
+        } else {
+            log.warn("发放优惠券失败:{},用户:{}",couponDO,loginUser);
+            throw new BizException(BizCodeEnum.COUPON_NO_STOCK);
+        }
 
         return JsonData.buildSuccess();
     }
