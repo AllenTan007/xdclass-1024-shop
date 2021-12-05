@@ -88,8 +88,8 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
         couponRecordDO.setCouponId(couponId);
         couponRecordDO.setId(null);
 
-        //扣减库存  TODO
-        int rows = 1; //couponMapper.reduceStock(couponId);
+        //扣减库存
+        int rows = couponMapper.reduceStock(couponId);
 
         if (rows == 1) {
             //库存扣减成功才保存记录
