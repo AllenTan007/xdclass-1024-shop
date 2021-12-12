@@ -6,15 +6,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import net.xdclass.enums.CouponCategoryEnum;
+import net.xdclass.request.NewUserCouponRequest;
 import net.xdclass.service.CouponService;
 import net.xdclass.util.JsonData;
-import org.redisson.api.RLock;
-import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -50,6 +48,13 @@ public class CouponController {
         JsonData jsonData = couponService.addCoupon(couponId, CouponCategoryEnum.PROMOTION);
 
         return jsonData;
+    }
+
+    @ApiOperation("RPC-新用户注册接口")
+    @PostMapping("/new_coupon")
+    public JsonData addNewUserCoupon(@ApiParam(value = "用户对象", required = true)@RequestBody NewUserCouponRequest newUserCouponRequest) {
+
+        return couponService.getCouponByNewUser(newUserCouponRequest);
     }
 
 }

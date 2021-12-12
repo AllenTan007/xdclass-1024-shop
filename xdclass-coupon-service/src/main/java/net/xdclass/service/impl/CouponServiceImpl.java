@@ -16,6 +16,7 @@ import net.xdclass.mapper.CouponRecordMapper;
 import net.xdclass.model.CouponDO;
 import net.xdclass.model.CouponRecordDO;
 import net.xdclass.model.LoginUser;
+import net.xdclass.request.NewUserCouponRequest;
 import net.xdclass.service.CouponService;
 import net.xdclass.util.CommonUtil;
 import net.xdclass.util.JsonData;
@@ -30,6 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -72,7 +74,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRED)
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     public JsonData addCoupon(long couponId, CouponCategoryEnum couponCategory) {
 
         LoginUser loginUser = LoginInterceptor.threadLocal.get();
@@ -83,7 +85,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
 
         lock.lock();
 
-        log.info("领劵接口加锁成功:{}",Thread.currentThread().getId());
+        log.info("领劵接口加锁成功:{}", Thread.currentThread().getId());
 
         try {
             CouponDO couponDO = couponMapper.selectOne(new QueryWrapper<CouponDO>()
@@ -114,11 +116,34 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
                 log.warn("发放优惠券失败:{},用户:{}", couponDO, loginUser);
                 throw new BizException(BizCodeEnum.COUPON_NO_STOCK);
             }
-        }finally {
+        } finally {
             lock.unlock();
             log.info("解锁成功");
         }
 
+        return JsonData.buildSuccess();
+    }
+
+    /**
+     * 用户微服务调用的时候，没传递token
+     *
+     * 本地直接调用发放优惠券的方法，需要构造一个登录用户存储在threadlocal
+     *
+     * @param newUserCouponRequest
+     * @return
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
+    public JsonData getCouponByNewUser(NewUserCouponRequest newUserCouponRequest) {
+        LoginUser loginUser = new LoginUser();
+        loginUser.setId(newUserCouponRequest.getUserId());
+        loginUser.setName(newUserCouponRequest.getName());
+        LoginInterceptor.threadLocal.set(loginUser);
+        List<CouponDO> couponDOList = couponMapper.selectList(new QueryWrapper<CouponDO>()
+                .eq("category", CouponCategoryEnum.NEW_USER.name()));
+        for (CouponDO couponDO : couponDOList) {
+            this.addCoupon(couponDO.getId(), CouponCategoryEnum.NEW_USER);
+        }
         return JsonData.buildSuccess();
     }
 

@@ -1,8 +1,9 @@
 package net.xdclass.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import net.xdclass.enums.CouponCategoryEnum;
 import net.xdclass.model.CouponDO;
-import com.baomidou.mybatisplus.extension.service.IService;
+import net.xdclass.request.NewUserCouponRequest;
 import net.xdclass.util.JsonData;
 
 import java.util.Map;
@@ -20,4 +21,6 @@ public interface CouponService extends IService<CouponDO> {
     Map<String,Object> pageCouponActivity(int page, int size);
 
     JsonData addCoupon(long couponId, CouponCategoryEnum promotion);
+
+    JsonData getCouponByNewUser(NewUserCouponRequest newUserCouponRequest);
 }
