@@ -17,4 +17,6 @@ public interface ProductService {
     Map<String, Object> page(int page, int size);
 
     ProductVO detail(long productId);
+
+    ProductVO findDetailById(long productId);
 }

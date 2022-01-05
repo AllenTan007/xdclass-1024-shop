@@ -12,11 +12,11 @@ public class CartItemRequest {
 
     @ApiModelProperty("商品id")
     @JsonProperty("product_id")
-    private String productId;
+    private long productId;
 
     @ApiModelProperty("购买数量")
     @JsonProperty("buy_num")
-    private String buyNum;
+    private int buyNum;
 
 
 

@@ -16,11 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/cart/v1")
 public class CartController {
 
-
-
     @Autowired
     private CartService cartService;
-
 
     @ApiOperation("添加购物车")
     public JsonData addCart(@RequestBody CartItemRequest cartItemRequest){
