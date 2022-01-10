@@ -1,17 +1,18 @@
 package net.xdclass.model;
 
-import java.math.BigDecimal;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author tanshiwei
@@ -24,7 +25,7 @@ public class ProductDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -50,7 +51,7 @@ public class ProductDO implements Serializable {
     /**
      * 新价格
      */
-    private BigDecimal price;
+    private BigDecimal amount;
 
     /**
      * 库存

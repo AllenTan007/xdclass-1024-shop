@@ -4,6 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 
+/**
+ * 小滴课堂,愿景：让技术不再难学
+ *
+ * @Description  购物项
+ *
+ * @Author 二当家小D
+ * @Remark 有问题直接联系我，源码-笔记-技术交流群
+ * @Version 1.0
+ **/
+
 public class CartItemVO {
 
     /**
@@ -83,11 +93,13 @@ public class CartItemVO {
         this.amount = amount;
     }
 
+    /**
+     * 商品单价 * 购买数量
+     * @return
+     */
     public BigDecimal getTotalAmount() {
-        return this.amount.multiply(new BigDecimal(buyNum));
+
+        return this.amount.multiply(new BigDecimal(this.buyNum));
     }
 
-    public void setTotalAmount(BigDecimal totalAmount) {
-        this.totalAmount = totalAmount;
-    }
 }
