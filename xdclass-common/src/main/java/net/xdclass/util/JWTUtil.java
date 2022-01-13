@@ -14,7 +14,7 @@ public class JWTUtil {
     /**
      * token 过期时间,正常是7天, 方便测试我们改为70
      */
-    private static final long EXPIRE = 1000 * 60 * 60 * 24 * 7 * 10;
+    private static final long EXPIRE = 1000 * 60 * 60 * 24 * 7 * 100;
 
     /**
      * 加密的秘钥

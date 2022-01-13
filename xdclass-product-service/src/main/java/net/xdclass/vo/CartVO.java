@@ -54,7 +54,8 @@ public class CartVO {
         BigDecimal totalAmount = new BigDecimal(0);
         if(this.cartItems!=null){
             for (CartItemVO cartItem : cartItems) {
-                totalAmount.add(cartItem.getTotalAmount());
+                BigDecimal totalAmount1 = cartItem.getTotalAmount();
+                totalAmount = totalAmount.add(totalAmount1);
             }
         }
         return totalAmount;
@@ -68,7 +69,7 @@ public class CartVO {
         BigDecimal totalAmount = new BigDecimal(0);
         if(this.cartItems!=null){
             for (CartItemVO cartItem : cartItems) {
-                totalAmount.add(cartItem.getTotalAmount());
+                totalAmount = totalAmount.add(cartItem.getTotalAmount());
             }
         }
         return totalAmount;

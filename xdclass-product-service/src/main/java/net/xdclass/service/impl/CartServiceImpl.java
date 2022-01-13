@@ -11,12 +11,19 @@ import net.xdclass.request.CartItemRequest;
 import net.xdclass.service.CartService;
 import net.xdclass.service.ProductService;
 import net.xdclass.vo.CartItemVO;
+import net.xdclass.vo.CartVO;
 import net.xdclass.vo.ProductVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * 小滴课堂,愿景：让技术不再难学
@@ -77,7 +84,64 @@ public class CartServiceImpl implements CartService {
 
     }
 
+    @Override
+    public void clear() {
+        String cartKey = getCartKey();
+        redisTemplate.delete(cartKey);
+    }
 
+    @Override
+    public CartVO getMyCart() {
+
+        List<CartItemVO> cartItemVOList = buildCartItem(false);
+        //封装成cartvo
+        CartVO cartVO = new CartVO();
+        cartVO.setCartItems(cartItemVOList);
+        return cartVO;
+
+    }
+
+    private List<CartItemVO> buildCartItem(boolean latestPrice) {
+
+        BoundHashOperations<String, Object, Object> myCartOps = getMyCartOps();
+        List<Object> itemList = myCartOps.values();
+        List<CartItemVO> cartItemVOList = new ArrayList<>();
+
+
+        //拼接id列表查询最新价格
+        List<Long> productIdList = new ArrayList<>();
+        for (Object item : itemList) {
+            CartItemVO cartItemVO = JSON.parseObject((String) item, CartItemVO.class);
+            cartItemVOList.add(cartItemVO);
+            productIdList.add(cartItemVO.getProductId());
+        }
+
+        //查询最新的商品价格
+        if (latestPrice){
+            setProductLatestPrice(cartItemVOList,productIdList);
+        }
+        return cartItemVOList;
+    }
+
+    /**
+     * 设置商品最新价格
+     * @param cartItemVOList
+     * @param productIdList
+     */
+    private void setProductLatestPrice(List<CartItemVO> cartItemVOList, List<Long> productIdList) {
+
+        //批量查询
+        List<ProductVO> productVOList = productService.findProductsByIdBatch(productIdList);
+
+        Map<Long, ProductVO> maps = productVOList.stream().collect(Collectors.toMap(ProductVO::getId, Function.identity()));
+
+        cartItemVOList.stream().forEach(item->{
+            ProductVO productVO = maps.get(item.getProductId());
+            item.setAmount(productVO.getAmount());
+            item.setProductTitle(productVO.getTitle());
+            item.setProductImg(productVO.getCoverImg());
+        });
+    }
 
 
     /**

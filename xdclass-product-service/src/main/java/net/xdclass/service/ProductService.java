@@ -2,6 +2,7 @@ package net.xdclass.service;
 
 import net.xdclass.vo.ProductVO;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,4 +20,6 @@ public interface ProductService {
     ProductVO detail(long productId);
 
     ProductVO findDetailById(long productId);
+
+    List<ProductVO> findProductsByIdBatch(List<Long> productIdList);
 }

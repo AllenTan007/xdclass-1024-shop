@@ -1,5 +1,6 @@
 package net.xdclass.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +12,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -70,6 +73,12 @@ public class ProductServiceImpl implements ProductService {
 
         return beanProcess(productDO);
 
+    }
+
+    @Override
+    public List<ProductVO> findProductsByIdBatch(List<Long> productIdList) {
+        List<ProductDO> productDOList = productMapper.selectList(new QueryWrapper<ProductDO>().in("id", productIdList));
+        return productDOList.stream().map(this::beanProcess).collect(Collectors.toList());
     }
 
 }
