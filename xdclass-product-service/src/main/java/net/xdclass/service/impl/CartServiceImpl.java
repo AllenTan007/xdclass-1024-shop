@@ -103,7 +103,20 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void deleteItem(long productId) {
+        BoundHashOperations<String, Object, Object> myCartOps = getMyCartOps();
+        myCartOps.delete(productId);
+    }
 
+    @Override
+    public void changeItemNum(CartItemRequest cartItemRequest) {
+        BoundHashOperations<String, Object, Object> myCartOps = getMyCartOps();
+        Object item = myCartOps.get(cartItemRequest.getProductId());
+        if (item == null){
+            throw new BizException(BizCodeEnum.CART_FAIL);
+        }
+        CartItemVO cartItemVO =  JSON.parseObject((String) item,CartItemVO.class);
+        cartItemVO.setBuyNum(cartItemRequest.getBuyNum());
+        myCartOps.put(cartItemRequest.getProductId(),JSON.toJSONString(cartItemVO));
     }
 
     private List<CartItemVO> buildCartItem(boolean latestPrice) {

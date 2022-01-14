@@ -51,6 +51,11 @@ public class CartController {
         return JsonData.buildSuccess();
     }
 
-
+    @ApiOperation("修改购物车数量")
+    @PostMapping("/change")
+    public JsonData changeItemNum(@ApiParam("购物项") @RequestBody  CartItemRequest cartItemRequest ){
+        cartService.changeItemNum(cartItemRequest);
+        return JsonData.buildSuccess();
+    }
 
 }
