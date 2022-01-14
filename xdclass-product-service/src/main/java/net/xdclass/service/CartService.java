@@ -10,4 +10,6 @@ public interface CartService {
     void clear();
 
     CartVO getMyCart();
+
+    void deleteItem(long productId);
 }

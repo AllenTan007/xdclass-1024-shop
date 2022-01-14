@@ -101,6 +101,11 @@ public class CartServiceImpl implements CartService {
 
     }
 
+    @Override
+    public void deleteItem(long productId) {
+
+    }
+
     private List<CartItemVO> buildCartItem(boolean latestPrice) {
 
         BoundHashOperations<String, Object, Object> myCartOps = getMyCartOps();

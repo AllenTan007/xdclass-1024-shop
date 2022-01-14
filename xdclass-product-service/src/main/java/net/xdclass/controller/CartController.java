@@ -9,10 +9,7 @@ import net.xdclass.service.CartService;
 import net.xdclass.util.JsonData;
 import net.xdclass.vo.CartVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Api("购物车")
 @RestController
@@ -45,5 +42,15 @@ public class CartController {
         CartVO cartVO = cartService.getMyCart();
         return JsonData.buildSuccess(cartVO);
     }
+
+    @ApiOperation("删除购物项")
+    @DeleteMapping("/delete/{product_id}")
+    public JsonData deleteItem( @ApiParam(value = "商品id",required = true)@PathVariable("product_id")long productId ){
+
+        cartService.deleteItem(productId);
+        return JsonData.buildSuccess();
+    }
+
+
 
 }
