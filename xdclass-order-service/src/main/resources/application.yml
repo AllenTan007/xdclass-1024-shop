@@ -8,7 +8,11 @@ spring:
     host: 192.1.1.101
     password: 123456
     port: 8000
-
+  cloud:
+    #注册中心地址
+    nacos:
+      discovery:
+        server-addr: 192.1.1.101:8848
   #数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

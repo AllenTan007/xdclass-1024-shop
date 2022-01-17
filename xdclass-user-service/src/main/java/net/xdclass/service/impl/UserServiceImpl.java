@@ -4,10 +4,12 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.enums.SendCodeEnum;
+import net.xdclass.feign.CouponFeignService;
 import net.xdclass.interceptor.LoginInterceptor;
 import net.xdclass.mapper.UserMapper;
 import net.xdclass.model.LoginUser;
 import net.xdclass.model.UserDO;
+import net.xdclass.request.NewUserCouponRequest;
 import net.xdclass.request.UserLoginRequest;
 import net.xdclass.request.UserRegisterRequest;
 import net.xdclass.service.NotifyService;
@@ -42,6 +44,8 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
     @Autowired
     private NotifyService notifyService;
+    @Autowired
+    private CouponFeignService couponFeignService;
 
     @Override
     public JsonData register(UserRegisterRequest registerRequest) {
@@ -107,6 +111,11 @@ public class UserServiceImpl implements UserService {
 
     private void userRegisterInitTask(UserDO userDO) {
 
+        NewUserCouponRequest newUserCouponRequest = new NewUserCouponRequest();
+        newUserCouponRequest.setUserId(userDO.getId());
+        newUserCouponRequest.setName(userDO.getName());
+        JsonData jsonData = couponFeignService.addNewUserCoupon(newUserCouponRequest);
+        log.info("拉新优惠券:{},",jsonData);
     }
 
     /**

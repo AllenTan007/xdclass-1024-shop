@@ -8,6 +8,11 @@ spring:
     host: 192.1.1.101
     password: 123456
     port: 8000
+  cloud:
+    #注册中心地址
+    nacos:
+      discovery:
+        server-addr: 192.1.1.101:8848
   mail:
     host: smtp.163.com #发送邮件服务器
     username: tanshiwei1992@163.com #发送邮件的邮箱地址
