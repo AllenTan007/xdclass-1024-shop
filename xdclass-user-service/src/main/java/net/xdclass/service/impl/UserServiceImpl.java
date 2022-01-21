@@ -1,6 +1,7 @@
 package net.xdclass.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.enums.SendCodeEnum;
@@ -23,7 +24,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 
@@ -48,6 +48,7 @@ public class UserServiceImpl implements UserService {
     private CouponFeignService couponFeignService;
 
     @Override
+    @GlobalTransactional(rollbackFor = Exception.class)
     public JsonData register(UserRegisterRequest registerRequest) {
         boolean checkCode = false;
         //校验验证码
@@ -115,6 +116,9 @@ public class UserServiceImpl implements UserService {
         newUserCouponRequest.setUserId(userDO.getId());
         newUserCouponRequest.setName(userDO.getName());
         JsonData jsonData = couponFeignService.addNewUserCoupon(newUserCouponRequest);
+        if (jsonData.getCode() != 0){
+            throw new RuntimeException("发放优惠券异常");
+        }
         log.info("拉新优惠券:{},",jsonData);
     }
 
