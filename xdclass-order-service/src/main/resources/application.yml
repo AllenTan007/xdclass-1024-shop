@@ -13,6 +13,18 @@ spring:
     nacos:
       discovery:
         server-addr: 192.1.1.101:8848
+
+  rabbitmq:
+    host: 192.1.1.101
+    port: 5672
+    virtual-host: /dev
+    password: password
+    username: admin
+
+    #消息手工确认ACK
+    listener:
+      simple:
+        acknowledge-mode: manual
   #数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

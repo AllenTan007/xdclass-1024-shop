@@ -14,4 +14,6 @@ import net.xdclass.util.JsonData;
 public interface ProductOrderService {
 
     JsonData confirmOrder(ConfirmOrderRequest orderRequest);
+
+    String queryProductOrderState(String outTradeNo);
 }

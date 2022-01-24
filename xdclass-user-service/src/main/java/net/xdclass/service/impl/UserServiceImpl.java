@@ -24,6 +24,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Date;
 import java.util.List;
 
@@ -48,7 +50,7 @@ public class UserServiceImpl implements UserService {
     private CouponFeignService couponFeignService;
 
     @Override
-    @GlobalTransactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public JsonData register(UserRegisterRequest registerRequest) {
         boolean checkCode = false;
         //校验验证码
