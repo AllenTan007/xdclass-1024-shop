@@ -1,5 +1,8 @@
 package net.xdclass.service;
 
+import net.xdclass.model.ProductMessage;
+import net.xdclass.request.LockProductRequest;
+import net.xdclass.util.JsonData;
 import net.xdclass.vo.ProductVO;
 
 import java.util.List;
@@ -22,4 +25,8 @@ public interface ProductService {
     ProductVO findDetailById(long productId);
 
     List<ProductVO> findProductsByIdBatch(List<Long> productIdList);
+
+    JsonData lockProductStock(LockProductRequest lockProductRequest);
+
+    boolean releaseProductStock(ProductMessage productMessage);
 }
