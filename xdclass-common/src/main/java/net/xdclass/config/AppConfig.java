@@ -1,6 +1,7 @@
 package net.xdclass.config;
 
 
+import feign.RequestInterceptor;
 import lombok.Data;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
@@ -12,6 +13,8 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Configuration
 @Data
@@ -27,19 +30,19 @@ public class AppConfig {
     private String redisPwd;
 
     @Bean
-    public RedissonClient redissonClient(){
+    public RedissonClient redissonClient() {
         Config config = new Config();
 
         //单机方式
-        config.useSingleServer().setPassword(redisPwd).setAddress("redis://"+redisHost+":"+redisPort);
+        config.useSingleServer().setPassword(redisPwd).setAddress("redis://" + redisHost + ":" + redisPort);
 
         RedissonClient redissonClient = Redisson.create(config);
         return redissonClient;
     }
 
     @Bean
-    public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory factory){
-        RedisTemplate<String,Object> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(factory);
 
         RedisSerializer redisSerializer = new StringRedisSerializer();
@@ -48,5 +51,19 @@ public class AppConfig {
         redisTemplate.setValueSerializer(redisSerializer);
 
         return redisTemplate;
+    }
+
+    @Bean
+    public RequestInterceptor requestInterceptor() {
+
+        return template -> {
+            ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+            if (requestAttributes != null) {
+
+                String token = requestAttributes.getRequest().getHeader("token");
+
+                template.header("token", token);
+            }
+        };
     }
 }
