@@ -1,5 +1,6 @@
 package net.xdclass.service;
 
+import net.xdclass.model.OrderMessage;
 import net.xdclass.request.ConfirmOrderRequest;
 import net.xdclass.util.JsonData;
 
@@ -16,4 +17,6 @@ public interface ProductOrderService {
     JsonData confirmOrder(ConfirmOrderRequest orderRequest);
 
     String queryProductOrderState(String outTradeNo);
+
+    boolean closeProductOrder(OrderMessage orderMessage);
 }

@@ -119,6 +119,28 @@ public class CartServiceImpl implements CartService {
         myCartOps.put(cartItemRequest.getProductId(),JSON.toJSONString(cartItemVO));
     }
 
+    /**
+     * 确认购物车商品信息
+     * @param productIdList
+     * @return
+     */
+    @Override
+    public List<CartItemVO> confirmOrderCartItem(List<Long> productIdList) {
+        // 更新购物车商品价格
+        List<CartItemVO> cartItemVOList = buildCartItem(true);
+
+        List<CartItemVO> itemVOList = cartItemVOList.stream().filter(obj -> {
+            if (productIdList.contains(obj.getProductId())) {
+                BoundHashOperations<String,Object,Object> mycart =  getMyCartOps();
+                mycart.delete(obj.getProductId());
+                return true;
+            }
+            return false;
+        }).collect(Collectors.toList());
+
+        return itemVOList;
+    }
+
     private List<CartItemVO> buildCartItem(boolean latestPrice) {
 
         BoundHashOperations<String, Object, Object> myCartOps = getMyCartOps();

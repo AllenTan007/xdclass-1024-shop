@@ -1,11 +1,14 @@
 package net.xdclass.mapper;
 
-import net.xdclass.model.ProductOrderItemDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import net.xdclass.model.ProductOrderItemDO;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author tanshiwei
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface ProductOrderItemMapper extends BaseMapper<ProductOrderItemDO> {
 
+    void insertBatch(@Param("productOrderItemList") List<ProductOrderItemDO> productOrderItemList);
 }
