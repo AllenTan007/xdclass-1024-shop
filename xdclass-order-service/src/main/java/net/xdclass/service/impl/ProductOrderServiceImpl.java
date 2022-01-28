@@ -4,7 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
+import net.xdclass.component.PayFactory;
 import net.xdclass.config.RabbitMQConfig;
+import net.xdclass.constant.TimeConstant;
 import net.xdclass.enums.BizCodeEnum;
 import net.xdclass.enums.CouponStateEnum;
 import net.xdclass.enums.ProductOrderStateEnum;
@@ -26,10 +28,7 @@ import net.xdclass.request.OrderItemRequest;
 import net.xdclass.service.ProductOrderService;
 import net.xdclass.util.CommonUtil;
 import net.xdclass.util.JsonData;
-import net.xdclass.vo.CouponRecordVO;
-import net.xdclass.vo.LockProductRequest;
-import net.xdclass.vo.OrderItemVO;
-import net.xdclass.vo.ProductOrderAddressVO;
+import net.xdclass.vo.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +65,8 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     private RabbitTemplate rabbitTemplate;
     @Autowired
     private RabbitMQConfig rabbitMQConfig;
+    @Autowired
+    private PayFactory payFactory;
 
     /**
      * * 订单防重校验
@@ -131,10 +132,20 @@ public class ProductOrderServiceImpl implements ProductOrderService {
         rabbitTemplate.convertAndSend(rabbitMQConfig.getEventExchange(),rabbitMQConfig.getOrderCloseDelayRoutingKey(),orderMessage);
 
 
-        //创建支付  TODO
+        //创建支付
 
-
-        return null;
+        //创建支付
+        PayInfoVO payInfoVO = new PayInfoVO(orderOutTradeNo,
+                productOrderDO.getPayAmount(),orderRequest.getPayType(),
+                orderRequest.getClientType(), orderItemList.get(0).getProductTitle(),"", TimeConstant.ORDER_PAY_TIMEOUT_MILLS);
+        String payResult = payFactory.pay(payInfoVO);
+        if (StringUtils.isNotBlank(payResult)){
+            log.info("创建支付订单成功:payInfoVO={},payResult={}",payInfoVO,payResult);
+            return JsonData.buildSuccess(payResult);
+        }else {
+            log.error("创建支付订单失败:payInfoVO={},payResult={}",payInfoVO,payResult);
+            return JsonData.buildResult(BizCodeEnum.PAY_ORDER_FAIL);
+        }
     }
 
     // 创建订单项
@@ -337,11 +348,11 @@ public class ProductOrderServiceImpl implements ProductOrderService {
             return true;
         }
 
-        //向第三方支付查询订单是否真的未支付  TODO
-
-
-        String payResult = "";
-
+        //向第三方支付查询订单是否真的未支付
+        PayInfoVO payInfoVO = new PayInfoVO();
+        payInfoVO.setPayType(productOrderDO.getPayType());
+        payInfoVO.setOutTradeNo(orderMessage.getOutTradeNo());
+        String payResult = payFactory.queryPaySuccess(payInfoVO);
         if (StringUtils.isBlank(payResult)){
             log.info("结果为空，则未支付成功，本地取消订单:{}",orderMessage);
             productOrderMapper.updateOrderPayState(ProductOrderStateEnum.CANCEL.name(), orderMessage.getOutTradeNo());

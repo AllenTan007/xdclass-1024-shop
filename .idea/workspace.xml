@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="223cc6a6-adec-490f-941d-fddeb8e1732e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/AddressStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ClientType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderPayTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderStateEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/OrderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/model/ProductOrderDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/model/ProductOrderItemDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderItemServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/resources/mapper/ProductOrderItemMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/resources/mapper/ProductOrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/test/java/net/xdclass/biz/db/MyBatisPlusGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/constant/TimeConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/AlipayStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategyContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/WechatPayStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/AlipayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/PayUrlConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/vo/PayInfoVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderItemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderItemServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xdclass-order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xdclass-order-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,7 +51,118 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540">
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/BizCodeEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/constant/TimeConstant.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategyContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="e#246#247#0" expanded="true" />
+                <element signature="e#291#292#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderPayTypeEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/AlipayStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1675">
+              <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/AlipayConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/WechatPayStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#272#273#0" expanded="true" />
+                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+                <element signature="e#496#497#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,6 +186,22 @@
       <find>CurrentWebLoginUserInfo.getOrgOrganizationCode()</find>
       <find>jwt</find>
       <find>redisTemplate</find>
+      <find>@Transactional</find>
+      <find>@Glo</find>
+      <find>seata</find>
+      <find>glo</find>
+      <find>mq</find>
+      <find>/query_state</find>
+      <find>query_state</find>
+      <find>product_task</find>
+      <find>product_order</find>
+      <find>stock_release_delay_queue</find>
+      <find>find/</find>
+      <find>TypeReference</find>
+      <find>int</find>
+      <find>redisTemplate.delete</find>
+      <find>totalAmount</find>
+      <find>orderEventExchange</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -93,57 +213,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/MybatisPlusPageConfig.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/vo/CouponVO.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/mapper/CouponMapper.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/resources/mapper/CouponMapper.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/pom.xml" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/controller/AppConfig.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/controller/CouponRecordController.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/CouponRecordService.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/impl/CouponRecordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/vo/NewUserCouponVO.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/CouponService.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/request/NewUserCouponRequest.java" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/controller/CouponController.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/test/java/net/xdclass/biz/db/MyBatisPlusGenerator.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/BannerService.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/BannerVO.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/BannerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/BannerController.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/ProductApplication.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/ProductController.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/request/CartItemRequest.java" />
-        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/constant/CacheKey.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/pom.xml" />
         <option value="$PROJECT_DIR$/xdclass-common/pom.xml" />
-        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/impl/CouponServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/config/RabbitMQConfig.java" />
+        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/model/CouponRecordMessage.java" />
         <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/config/InterceptorConfig.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/config/InterceptorConfig.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/CartItemVO.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/ProductVO.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/model/ProductDO.java" />
-        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/AppConfig.java" />
+        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/controller/CouponController.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/request/LockProductRequest.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/request/OrderItemRequest.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/config/RabbitMQConfig.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/mq/ProductStockMQListener.java" />
         <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/feign/ProductOrderFeignSerivce.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/mapper/ProductMapper.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/resources/mapper/ProductMapper.xml" />
         <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/CartVO.java" />
-        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/util/JWTUtil.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/CartController.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/CartService.java" />
-        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/test/java/net/xdclass/biz/db/MyBatisPlusGenerator.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderItemService.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderService.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderItemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderItemController.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/test/java/net/xdclass/biz/MQTest.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/vo/ProductOrderAddressVO.java" />
+        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/exception/CustomExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/feign/UserFeignService.java" />
         <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderController.java" />
+        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/AppConfig.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/CartService.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/CartController.java" />
+        <option value="$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/CartServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/util/JsonData.java" />
+        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/feign/CouponFeignSerivce.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/vo/CouponRecordVO.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/feign/CouponFeignSerivce.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/vo/LockProductRequest.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/feign/ProductFeignService.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/model/ProductOrderDO.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderItemMapper.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/resources/mapper/ProductOrderItemMapper.xml" />
+        <option value="$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/mq/ProductOrderMQListener.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/RabbitMQConfig.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderService.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mq/ProductOrderMQListener.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderMapper.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/resources/mapper/ProductOrderMapper.xml" />
+        <option value="$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xdclass-coupon-service/src/main/resources/mapper/CouponRecordMapper.xml" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/pom.xml" />
         <option value="$PROJECT_DIR$/xdclass-order-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/OrderApplication.java" />
-        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayFactory.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategyContext.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategy.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/WechatPayStrategy.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/AlipayStrategy.java" />
+        <option value="$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/AlipayConfig.java" />
       </list>
     </option>
   </component>
@@ -168,15 +288,28 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="xdclass-common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="xdclass-common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="xdclass-common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="163" />
-    <option name="y" value="30" />
-    <option name="width" value="1802" />
-    <option name="height" value="1227" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -184,6 +317,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,7 +379,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="net" type="462c0819:PsiDirectoryNode" />
               <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -301,7 +435,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="net" type="462c0819:PsiDirectoryNode" />
               <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -312,7 +446,41 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="net" type="462c0819:PsiDirectoryNode" />
               <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="mq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -326,116 +494,6 @@
               <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
               <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-order-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -445,65 +503,12 @@
               <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
               <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xdclass-1024-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xdclass-1024-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass-product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="xdclass" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -515,41 +520,41 @@
     <property name="SearchEverywhereHistoryKey" value="setIfAbsent&#9;PSI&#9;JAVA://org.springframework.data.redis.core.BoundValueOperations#setIfAbsent&#10;swagger&#9;PSI&#9;JAVA://net.xdclass.config.SwaggerConfiguration&#10;FishEyeGimpy&#9;FILE&#9;jar://E:/apache-maven-3.6.0/repository/com/github/penggle/kaptcha/2.3.2/kaptcha-2.3.2-sources.jar!/com/google/code/kaptcha/impl/FishEyeGimpy.java&#10;obscurificator&#9;PSI&#9;JAVA://com.google.code.kaptcha.util.Config#getObscurificatorImpl&#10;WaterRipple&#9;ACTION&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1642170664655" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../supplychain-leasing-system" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1643370747724" />
+    <property name="last_opened_file_path" value="E:/大课笔记/笔记-代码-书籍-v10/笔记-代码-书籍/代码/第39章/第3集/xdclass-1024-shop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="net.xdclass.service" />
-      <recent name="net.xdclass.vo" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-order-service\src\main\resources\mapper" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-product-service\src\main\resources\mapper" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-coupon-service\src\main\resources\mapper" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="net.xdclass" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-common\src\main\java\net\xdclass\enums" />
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-order-service\src\main\resources" />
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-order-service\src\main\java" />
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-product-service\src\main\java\net\xdclass\vo" />
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-product-service\src\main\resources" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-coupon-service\src\main\resources\mapper" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-coupon-service\src\main\java\net\xdclass\mapper" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-coupon-service\src\main\java\net\xdclass\model" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-product-service\src\main\resources\mapper" />
+      <recent name="E:\workspace\xdclass-1024-shop\xdclass-product-service\src\main\java\net\xdclass\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.xdclass.constant" />
+      <recent name="net.xdclass.vo" />
       <recent name="net.xdclass.config" />
-      <recent name="net" />
-      <recent name="net.xdclass.biz.db" />
-      <recent name="net.xdclass" />
-      <recent name="net.xdclass.request" />
+      <recent name="net.xdclass.mq" />
+      <recent name="net.xdclass.model" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-order-service\src\main\resources\mapper" />
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-product-service\src\main\resources\mapper" />
-      <recent name="E:\workspace\xdclass-1024-shop\xdclass-coupon-service\src\main\resources\mapper" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="net.xdclass.service" />
+      <recent name="net.xdclass.vo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -566,14 +571,59 @@
   </component>
   <component name="RunManager" selected="Spring Boot.OrderApplication">
     <configuration name="MyBatisPlusGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="net.xdclass.biz.db.MyBatisPlusGenerator" />
-      <module name="xdclass-order-service" />
+      <option name="MAIN_CLASS_NAME" value="net.xdclass.db.MyBatisPlusGenerator" />
+      <module name="xdclass-coupon-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="net.xdclass.biz.db.*" />
+          <option name="PATTERN" value="net.xdclass.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisPlusGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="net.xdclass.db.MyBatisPlusGenerator" />
+      <module name="xdclass-product-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.xdclass.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MQTest.testCouponRecordRelease (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xdclass-product-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.xdclass.biz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.xdclass.biz" />
+      <option name="MAIN_CLASS_NAME" value="net.xdclass.biz.MQTest" />
+      <option name="METHOD_NAME" value="testCouponRecordRelease" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MQTest.testCouponRecordRelease" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xdclass-coupon-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.xdclass.biz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.xdclass.biz" />
+      <option name="MAIN_CLASS_NAME" value="net.xdclass.biz.MQTest" />
+      <option name="METHOD_NAME" value="testCouponRecordRelease" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -593,14 +643,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="xdclass-order-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="net.OrderApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -622,33 +666,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="xdclass-user-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.xdclass.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="net.xdclass.UserApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.CouponApplication" />
       <item itemvalue="Spring Boot.ProductApplication" />
       <item itemvalue="Application.MyBatisPlusGenerator" />
-      <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="JUnit.MQTest.testCouponRecordRelease" />
+      <item itemvalue="JUnit.MQTest.testCouponRecordRelease (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.OrderApplication" />
-        <item itemvalue="Application.MyBatisPlusGenerator" />
-        <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
         <item itemvalue="Spring Boot.CouponApplication" />
+        <item itemvalue="JUnit.MQTest.testCouponRecordRelease (1)" />
+        <item itemvalue="JUnit.MQTest.testCouponRecordRelease" />
+        <item itemvalue="Application.MyBatisPlusGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -725,7 +765,26 @@
       <workItem from="1641877712360" duration="3255000" />
       <workItem from="1642035805617" duration="739000" />
       <workItem from="1642050856093" duration="10129000" />
-      <workItem from="1642136561409" duration="10086000" />
+      <workItem from="1642136561409" duration="19481000" />
+      <workItem from="1642291146831" duration="3548000" />
+      <workItem from="1642384823749" duration="558000" />
+      <workItem from="1642395955767" duration="6502000" />
+      <workItem from="1642654496759" duration="11216000" />
+      <workItem from="1642757875326" duration="619000" />
+      <workItem from="1642862680135" duration="20000" />
+      <workItem from="1642899859082" duration="8588000" />
+      <workItem from="1642926292653" duration="53000" />
+      <workItem from="1642926386118" duration="194000" />
+      <workItem from="1642926613327" duration="142000" />
+      <workItem from="1642926781055" duration="778000" />
+      <workItem from="1642927593784" duration="255000" />
+      <workItem from="1642932206321" duration="5855000" />
+      <workItem from="1642944004001" duration="14464000" />
+      <workItem from="1643013791465" duration="11840000" />
+      <workItem from="1643162741505" duration="5344000" />
+      <workItem from="1643187504648" duration="23855000" />
+      <workItem from="1643332225854" duration="1076000" />
+      <workItem from="1643358647774" duration="6488000" />
     </task>
     <task id="LOCAL-00001" summary="jdk修改">
       <created>1629613738773</created>
@@ -902,37 +961,106 @@
       <option name="project" value="LOCAL" />
       <updated>1642150064543</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="nacos接入">
+      <created>1642400797692</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1642400797692</updated>
+    </task>
+    <task id="LOCAL-00027" summary="seata配置">
+      <created>1642655846592</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1642655846593</updated>
+    </task>
+    <task id="LOCAL-00028" summary="订单实体类">
+      <created>1642727920057</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1642727920057</updated>
+    </task>
+    <task id="LOCAL-00029" summary="优惠券回收">
+      <created>1643008472215</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1643008472216</updated>
+    </task>
+    <task id="LOCAL-00030" summary="商品库存回收">
+      <created>1643098239450</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1643098239450</updated>
+    </task>
+    <task id="LOCAL-00031" summary="地址查询">
+      <created>1643189309036</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1643189309037</updated>
+    </task>
+    <task id="LOCAL-00032" summary="确认订单">
+      <created>1643245339772</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1643245339772</updated>
+    </task>
+    <task id="LOCAL-00033" summary="确认订单">
+      <created>1643258691170</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1643258691170</updated>
+    </task>
+    <task id="LOCAL-00034" summary="确认订单">
+      <created>1643277280231</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1643277280231</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddressTest_testAddress - 2021.08.29 at 11h 13m 03s.xml">
-      <configuration name="AddressTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease - 2022.01.24 at 09h 48m 41s.xml">
+      <configuration name="MQTest.testCouponRecordRelease" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddressTest_testAddress - 2021.08.29 at 12h 12m 49s.xml">
-      <configuration name="AddressTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease - 2022.01.24 at 09h 51m 51s.xml">
+      <configuration name="MQTest.testCouponRecordRelease" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddressTest_testAddress - 2021.08.29 at 14h 50m 36s.xml">
-      <configuration name="AddressTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease - 2022.01.24 at 09h 57m 24s.xml">
+      <configuration name="MQTest.testCouponRecordRelease" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddressTest_testAddress - 2021.08.29 at 14h 52m 55s.xml">
-      <configuration name="AddressTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease - 2022.01.24 at 10h 00m 17s.xml">
+      <configuration name="MQTest.testCouponRecordRelease" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageServiceTest_testAddress - 2021.09.04 at 11h 39m 57s.xml">
-      <configuration name="MessageServiceTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease_(1) - 2022.01.24 at 19h 46m 58s.xml">
+      <configuration name="MQTest.testCouponRecordRelease (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageServiceTest_testAddress - 2021.09.04 at 15h 34m 52s.xml">
-      <configuration name="MessageServiceTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease_(1) - 2022.01.24 at 19h 50m 06s.xml">
+      <configuration name="MQTest.testCouponRecordRelease (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageServiceTest_testAddress - 2021.09.04 at 15h 48m 50s.xml">
-      <configuration name="MessageServiceTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease_(1) - 2022.01.24 at 19h 52m 29s.xml">
+      <configuration name="MQTest.testCouponRecordRelease (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageServiceTest_testAddress - 2021.09.04 at 15h 49m 40s.xml">
-      <configuration name="MessageServiceTest.testAddress" configurationId="JUnit" />
+    <history-entry file="MQTest_testCouponRecordRelease_(1) - 2022.01.24 at 19h 55m 15s.xml">
+      <configuration name="MQTest.testCouponRecordRelease (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTest_testCouponRecordRelease_(1) - 2022.01.24 at 19h 56m 42s.xml">
+      <configuration name="MQTest.testCouponRecordRelease (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTest_testCouponRecordRelease_(1) - 2022.01.24 at 19h 59m 12s.xml">
+      <configuration name="MQTest.testCouponRecordRelease (1)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264865000" />
+    <option name="totallyTimeSpent" value="375655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,8 +1073,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.29758713" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.25603217" />
       <window_info id="Structure" order="1" sideWeight="0.50070924" side_tool="true" weight="0.25938338" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -954,20 +1083,21 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="MyBatis Builder" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14326242" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.30401736" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.48510638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.23669924" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.23512748" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.29503545" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3257329" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3248227" />
       <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32960895" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -977,9 +1107,10 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.3297587" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.25536194" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.12466488" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3297587" />
       <window_info anchor="right" id="BPMNPalette" order="10" />
+      <window_info anchor="right" id="Mybatis datasource" order="11" show_stripe_button="false" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.29758713" />
@@ -1025,7 +1156,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="jdk修改" />
     <MESSAGE value="基础框架搭建" />
     <MESSAGE value="邮箱验证码验证" />
     <MESSAGE value="注册验证" />
@@ -1044,84 +1174,34 @@
     <MESSAGE value="购物车添加商品" />
     <MESSAGE value="查看购物车" />
     <MESSAGE value="修改购物车" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改购物车" />
+    <MESSAGE value="nacos接入" />
+    <MESSAGE value="seata配置" />
+    <MESSAGE value="订单实体类" />
+    <MESSAGE value="优惠券回收" />
+    <MESSAGE value="商品库存回收" />
+    <MESSAGE value="地址查询" />
+    <MESSAGE value="确认订单" />
+    <option name="LAST_COMMIT_MESSAGE" value="确认订单" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/controller/AddressController.java</url>
-          <line>38</line>
+          <url>file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/impl/CouponRecordServiceImpl.java</url>
+          <line>134</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/controller/NotifyController.java</url>
-          <line>68</line>
+          <url>file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java</url>
+          <line>121</line>
           <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/NotifyServiceImpl.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/MessageServiceImpl.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/controller/UserController.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/UserServiceImpl.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/UserServiceImpl.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/AddressServiceImpl.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/controller/AddressController.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/controller/CouponController.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/ProductController.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/ProductServiceImpl.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1143,364 +1223,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.8.RELEASE/spring-webmvc-5.2.8.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="505" column="27" selection-start-line="505" selection-start-column="27" selection-end-line="505" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.8.RELEASE/spring-webmvc-5.2.8.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="516" selection-start-line="516" selection-end-line="516" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.8.RELEASE/spring-web-5.2.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/NotifyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/config/InterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/config/InterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/ProductVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/model/ProductDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.11.2/jackson-databind-2.11.2.jar!/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="357" selection-start-line="357" selection-end-line="357" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/CartVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/util/JsonData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/config/CaptchaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-609">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/SwaggerConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/interceptor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/util/CheckUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/util/JWTUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="44" column="28" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/config/InterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/config/OSSConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/MybatisPlusPageConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="85" lean-forward="true" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.3.3.RELEASE/spring-data-redis-2.3.3.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="751" column="51" selection-start-line="751" selection-start-column="51" selection-end-line="751" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/CartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/BizCodeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/jdk1.8.0_251/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/request/CartItemRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/vo/CartItemVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1465#1466#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1578#1579#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/CartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/model/ProductOrderDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/model/ProductOrderItemDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderItemMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/test/java/net/xdclass/biz/db/MyBatisPlusGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/OrderApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/AddressStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ClientType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderStateEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1508,31 +1230,374 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderPayTypeEnum.java">
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mapper/ProductOrderMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="350">
+          <caret line="16" column="77" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderTypeEnum.java">
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/resources/mapper/ProductOrderMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="441">
+          <caret line="29" column="82" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/InterceptorConfig.java">
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/mq/ProductOrderMQListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="430">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/2.2.10.RELEASE/spring-rabbit-2.2.10.RELEASE.jar!/org/springframework/amqp/rabbit/core/RabbitTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="547" column="16" selection-start-line="547" selection-start-column="16" selection-end-line="547" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/request/ConfirmOrderRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-537" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/openfeign/feign-core/10.10.1/feign-core-10.10.1.jar!/feign/SynchronousMethodHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/config/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/feign/UserFeignService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/AddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/service/impl/AddressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-user-service/src/main/java/net/xdclass/controller/AddressController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/ProductOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/util/JsonData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.8.RELEASE/spring-webmvc-5.2.8.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="553" selection-start-line="553" selection-end-line="553" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/feign/ProductFeignService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/controller/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/CartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-product-service/src/main/java/net/xdclass/service/impl/CartServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/mapper/CouponRecordMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/feign/CouponFeignSerivce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.8.RELEASE/spring-web-5.2.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/impl/CouponRecordServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3100">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.2.8.RELEASE/spring-core-5.2.8.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.2.8.RELEASE/spring-aop-5.2.8.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10000">
+          <caret line="446" selection-start-line="446" selection-end-line="446" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-coupon-service/src/main/resources/mapper/CouponRecordMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/controller/CouponRecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="58" column="63" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-coupon-service/src/main/java/net/xdclass/service/CouponRecordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alipay/sdk/alipay-sdk-java/4.10.218.ALL/alipay-sdk-java-4.10.218.ALL.jar!/com/alipay/api/AlipayClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/PayUrlConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/controller/ProductOrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="125">
+          <caret line="44" column="52" lean-forward="true" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="66" column="6" lean-forward="true" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/vo/PayInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/ProductOrderPayTypeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/constant/TimeConstant.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-common/src/main/java/net/xdclass/enums/BizCodeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/WechatPayStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/PayStrategyContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/config/AlipayConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/component/AlipayStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1675">
+          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdclass-order-service/src/main/java/net/xdclass/service/impl/ProductOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
