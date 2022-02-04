@@ -131,9 +131,6 @@ public class ProductOrderServiceImpl implements ProductOrderService {
 
         rabbitTemplate.convertAndSend(rabbitMQConfig.getEventExchange(),rabbitMQConfig.getOrderCloseDelayRoutingKey(),orderMessage);
 
-
-        //创建支付
-
         //创建支付
         PayInfoVO payInfoVO = new PayInfoVO(orderOutTradeNo,
                 productOrderDO.getPayAmount(),orderRequest.getPayType(),
