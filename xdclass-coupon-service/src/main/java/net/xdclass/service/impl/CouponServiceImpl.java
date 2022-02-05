@@ -79,7 +79,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
 
         LoginUser loginUser = LoginInterceptor.threadLocal.get();
 
-        String lockKey = "lock:coupon:" + couponId;
+        String lockKey = "lock:coupon:" + couponId + loginUser.getId();
 
         RLock lock = redissonClient.getLock(lockKey);
 
@@ -126,7 +126,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, CouponDO> imple
 
     /**
      * 用户微服务调用的时候，没传递token
-     *
+     * <p>
      * 本地直接调用发放优惠券的方法，需要构造一个登录用户存储在threadlocal
      *
      * @param newUserCouponRequest
