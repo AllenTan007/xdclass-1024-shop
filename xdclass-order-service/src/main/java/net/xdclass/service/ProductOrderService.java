@@ -2,6 +2,7 @@ package net.xdclass.service;
 
 import net.xdclass.model.OrderMessage;
 import net.xdclass.request.ConfirmOrderRequest;
+import net.xdclass.request.RepayOrderRequest;
 import net.xdclass.util.JsonData;
 
 /**
@@ -19,4 +20,7 @@ public interface ProductOrderService {
     String queryProductOrderState(String outTradeNo);
 
     boolean closeProductOrder(OrderMessage orderMessage);
+
+    JsonData repay(RepayOrderRequest repayOrderRequest);
+
 }

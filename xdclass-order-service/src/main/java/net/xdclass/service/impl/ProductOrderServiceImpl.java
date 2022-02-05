@@ -25,6 +25,7 @@ import net.xdclass.model.ProductOrderItemDO;
 import net.xdclass.request.ConfirmOrderRequest;
 import net.xdclass.request.LockCouponRecordRequest;
 import net.xdclass.request.OrderItemRequest;
+import net.xdclass.request.RepayOrderRequest;
 import net.xdclass.service.ProductOrderService;
 import net.xdclass.util.CommonUtil;
 import net.xdclass.util.JsonData;
@@ -129,18 +130,18 @@ public class ProductOrderServiceImpl implements ProductOrderService {
         OrderMessage orderMessage = new OrderMessage();
         orderMessage.setOutTradeNo(orderOutTradeNo);
 
-        rabbitTemplate.convertAndSend(rabbitMQConfig.getEventExchange(),rabbitMQConfig.getOrderCloseDelayRoutingKey(),orderMessage);
+        rabbitTemplate.convertAndSend(rabbitMQConfig.getEventExchange(), rabbitMQConfig.getOrderCloseDelayRoutingKey(), orderMessage);
 
         //创建支付
         PayInfoVO payInfoVO = new PayInfoVO(orderOutTradeNo,
-                productOrderDO.getPayAmount(),orderRequest.getPayType(),
-                orderRequest.getClientType(), orderItemList.get(0).getProductTitle(),"", TimeConstant.ORDER_PAY_TIMEOUT_MILLS);
+                productOrderDO.getPayAmount(), orderRequest.getPayType(),
+                orderRequest.getClientType(), orderItemList.get(0).getProductTitle(), "", TimeConstant.ORDER_PAY_TIMEOUT_MILLS);
         String payResult = payFactory.pay(payInfoVO);
-        if (StringUtils.isNotBlank(payResult)){
-            log.info("创建支付订单成功:payInfoVO={},payResult={}",payInfoVO,payResult);
+        if (StringUtils.isNotBlank(payResult)) {
+            log.info("创建支付订单成功:payInfoVO={},payResult={}", payInfoVO, payResult);
             return JsonData.buildSuccess(payResult);
-        }else {
-            log.error("创建支付订单失败:payInfoVO={},payResult={}",payInfoVO,payResult);
+        } else {
+            log.error("创建支付订单失败:payInfoVO={},payResult={}", payInfoVO, payResult);
             return JsonData.buildResult(BizCodeEnum.PAY_ORDER_FAIL);
         }
     }
@@ -334,14 +335,14 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     public boolean closeProductOrder(OrderMessage orderMessage) {
 
         ProductOrderDO productOrderDO = productOrderMapper.selectOne(new QueryWrapper<ProductOrderDO>().eq("out_trade_no", orderMessage.getOutTradeNo()));
-        if (productOrderDO == null){
+        if (productOrderDO == null) {
             //订单不存在
-            log.warn("直接确认消息，订单不存在:{}",orderMessage);
+            log.warn("直接确认消息，订单不存在:{}", orderMessage);
             return true;
         }
 
-        if (ProductOrderStateEnum.PAY.name().equalsIgnoreCase(productOrderDO.getState())){
-            log.info("直接确认消息,订单已经支付:{}",orderMessage);
+        if (ProductOrderStateEnum.PAY.name().equalsIgnoreCase(productOrderDO.getState())) {
+            log.info("直接确认消息,订单已经支付:{}", orderMessage);
             return true;
         }
 
@@ -350,15 +351,60 @@ public class ProductOrderServiceImpl implements ProductOrderService {
         payInfoVO.setPayType(productOrderDO.getPayType());
         payInfoVO.setOutTradeNo(orderMessage.getOutTradeNo());
         String payResult = payFactory.queryPaySuccess(payInfoVO);
-        if (StringUtils.isBlank(payResult)){
-            log.info("结果为空，则未支付成功，本地取消订单:{}",orderMessage);
+        if (StringUtils.isBlank(payResult)) {
+            log.info("结果为空，则未支付成功，本地取消订单:{}", orderMessage);
             productOrderMapper.updateOrderPayState(ProductOrderStateEnum.CANCEL.name(), orderMessage.getOutTradeNo());
             return true;
-        }else {
-            log.info("结果为空，则未支付成功，本地取消订单:{}",orderMessage);
+        } else {
+            log.info("结果为空，则未支付成功，本地取消订单:{}", orderMessage);
             productOrderMapper.updateOrderPayState(ProductOrderStateEnum.PAY.name(), orderMessage.getOutTradeNo());
             return true;
         }
 
+    }
+
+    @Override
+    public JsonData repay(RepayOrderRequest repayOrderRequest) {
+
+        LoginUser loginUser = LoginInterceptor.threadLocal.get();
+
+        ProductOrderDO productOrderDO = productOrderMapper.selectOne(new QueryWrapper<ProductOrderDO>().eq("out_trade_no", repayOrderRequest.getOutTradeNo()).eq("user_id", loginUser.getId()));
+
+        log.info("订单状态:{}", productOrderDO);
+
+        if (productOrderDO == null) {
+            return JsonData.buildResult(BizCodeEnum.PAY_ORDER_NOT_EXIST);
+        }
+        if (!productOrderDO.getState().equalsIgnoreCase(ProductOrderStateEnum.NEW.name())) {
+            return JsonData.buildResult(BizCodeEnum.PAY_ORDER_STATE_ERROR);
+        } else {
+            // 订单创建
+            long orderLiveTime = CommonUtil.getCurrentTimestamp() - productOrderDO.getCreateTime().getTime();
+
+            //创建订单是临界点，所以再增加1分钟多几秒，假如29分，则也不能支付了
+            orderLiveTime = orderLiveTime + 70 * 1000;
+
+            //大于订单时间,则失效
+            if (orderLiveTime>TimeConstant.ORDER_PAY_TIMEOUT_MILLS) {
+                return JsonData.buildResult(BizCodeEnum.PAY_ORDER_PAY_TIMEOUT);
+            }else {
+                //总时间-存活的时间 = 剩下的有效时间
+                long timeout = TimeConstant.ORDER_PAY_TIMEOUT_MILLS - orderLiveTime;
+                //创建支付
+                PayInfoVO payInfoVO = new PayInfoVO(productOrderDO.getOutTradeNo(),
+                        productOrderDO.getPayAmount(),repayOrderRequest.getPayType(),
+                        repayOrderRequest.getClientType(), productOrderDO.getOutTradeNo(),"",timeout);
+
+                log.info("payInfoVO={}",payInfoVO);
+                String payResult = payFactory.pay(payInfoVO);
+                if(StringUtils.isNotBlank(payResult)){
+                    log.info("创建二次支付订单成功:payInfoVO={},payResult={}",payInfoVO,payResult);
+                    return JsonData.buildSuccess(payResult);
+                }else {
+                    log.error("创建二次支付订单失败:payInfoVO={},payResult={}",payInfoVO,payResult);
+                    return JsonData.buildResult(BizCodeEnum.PAY_ORDER_FAIL);
+                }
+            }
+        }
     }
 }
